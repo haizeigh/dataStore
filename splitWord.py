@@ -1,13 +1,16 @@
 import jieba
 import jieba.posseg as pseg
 import jieba.analyse as anl
+import os
 
 class MySpliter:
 
     def split(self, word):
         seg_list = jieba.cut(word, cut_all=False)
         stopWords = []
-        for stopWord in open("/Users/xmly/PycharmProjects/test1/com/stopwords/hit_stopwords.txt", 'r'):
+        # 哈工大停用词表
+        path = os.getcwd()  # 获取当前路径
+        for stopWord in open(path + "/sources/hit_stopwords.txt", 'r'):
             stopWords.append(stopWord.strip())
 
         splitWordList = []

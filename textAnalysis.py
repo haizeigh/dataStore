@@ -55,6 +55,7 @@ def getClasslabel(num):
 
 
 def getClasslabel100(num):
+    # // "表示整数除法。
     return num//100000
 
 def test():
