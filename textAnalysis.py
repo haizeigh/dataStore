@@ -2,6 +2,7 @@ import  xlrd
 from splitWord import MySpliter
 from MyWord2Ver import MyWord2Ver
 import numpy as np
+import os
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split#将数据分为测试集和训练集
@@ -63,8 +64,10 @@ def test():
 
 
 def analysis():
+    # 获取当前路径
+    path = os.getcwd()
     # 打开文件
-    excel = xlrd.open_workbook("/Users/xmly/PycharmProjects/test1/com/data/sources/bilibili_ test.xlsx")
+    excel = xlrd.open_workbook(path+"/sources/bilibili_ test.xlsx")
     sheet = excel.sheet_by_name("bilibili_")
     print("总行：" + str(sheet.nrows))
     print("总列：" + str(sheet.ncols))
